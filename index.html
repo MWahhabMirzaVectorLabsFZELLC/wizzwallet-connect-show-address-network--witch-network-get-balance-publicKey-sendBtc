@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect to WizzWallet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+</head>
+
+<body>
+    <header>
+        <h2><b>WizzWallet</b></h2>
+    </header>
+    <dotlottie-player src="https://lottie.host/9aad6412-1d33-4b8b-8e44-d52d06cebef4/i71WvOjusF.json"
+        background="transparent" speed="0.2" style="width: 500px; 
+    height: 500px,
+    " direction="1" playMode="normal" loop autoplay class="lottie"></dotlottie-player>
+
+    <button class="primary connect-button" id="myButton">Connect Wallet</button>
+
+    <dialog id="dialog">
+        <div id="account-address"></div>
+        <div id="network-status"></div>
+        <div id="account-balance"></div>
+        <div id="public-key"></div>
+        <!-- Elements inside dialog1 -->
+        <button class="switch-btn" id="switchBtn" onclick="switchNetwork()">Switch Account</button>
+        <!-- Other elements -->
+        <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+    </dialog>
+
+    <dialog id="dialog0">
+        <!-- Elements inside dialog0 -->
+        <h2>Select Network</h2>
+        <button class="livenet-btn">Livenet</button>
+        <button class="testnet-btn">Testnet</button>
+        <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+    </dialog>
+
+
+    <div class="send-bitcoin">
+        <h3>Send Bitcoin</h3>
+        <label for="recipient-address" id="recipient-address1">Recipient Address:</label>
+        <input type="text" id="recipient-address" required>
+
+        <label for="amount" id="amount1">Amount (satoshis):</label>
+        <input type="text" id="amount" required>
+        <br><br>
+
+        <label for="fee-rate" id="fee-rate1">Fee Rate (satoshis per byte):</label>
+        <input type="text" id="fee-rate" required>
+
+
+        <button class="sendBtc9" id="sendBtn" onclick="sendBitcoin()">Send Bitcoin</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
